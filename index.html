@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content Creator Crew</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+          sans-serif;
+        background-color: #0c111d;
+        color: #f5f7ff;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        padding: 3rem 1.5rem;
+        text-align: center;
+        color: #fff;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      header p {
+        margin-top: 0.75rem;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin-inline: auto;
+      }
+
+      main {
+        flex: 1;
+        padding: 2rem 1.25rem 4rem;
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      section {
+        background: rgba(13, 19, 44, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        color: #93c5fd;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        line-height: 1.6;
+      }
+
+      code {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .cta a {
+        text-decoration: none;
+        color: #0f172a;
+        background: #fbbf24;
+        padding: 0.85rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(251, 191, 36, 0.45);
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @media (max-width: 640px) {
+        section {
+          padding: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Content Creator Crew</h1>
+      <p>
+        Automated AI crew that researches topics, writes scripts, and generates
+        voice-over ready audio assets using Google Gemini.
+      </p>
+      <div class="cta">
+        <a href="https://github.com/Arnavkanwar14/Content-Creator-AI-System" target="_blank">View code</a>
+        <a href="#outputs">See sample outputs</a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>What it does</h2>
+        <ul>
+          <li>Researches a topic using a multi-agent CrewAI workflow.</li>
+          <li>Drafts structured reports and presentation-ready scripts.</li>
+          <li>Generates WAV narration using Gemini text-to-speech.</li>
+          <li>Saves everything inside the <code>outputs/</code> folder.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How to run it locally</h2>
+        <ol>
+          <li>Install Python 3.10+ and clone this repo.</li>
+          <li>Copy <code>env_template.txt</code> → <code>.env</code> and add your Gemini API key.</li>
+          <li>Run <code>pip install -e .</code> to install dependencies.</li>
+          <li>Execute <code>python -m content_creator.main</code> to produce new assets.</li>
+        </ol>
+      </section>
+
+      <section id="outputs">
+        <h2>Sample deliverables</h2>
+        <p>
+          Replace these links with the latest artifacts from
+          <code>outputs/</code> before publishing the site.
+        </p>
+        <ul>
+          <li><a href="outputs/report-20250914-123023.md">Research report</a></li>
+          <li><a href="outputs/script-20250914-123819.md">Script example</a></li>
+          <li><a href="outputs/content-20250914-123823.wav">Narrated audio</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Content Creator Crew</footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
